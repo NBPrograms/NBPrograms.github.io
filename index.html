@@ -12,6 +12,13 @@
     <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+
+    <script>
+        function clearInputs() {
+            document.getElementById("emailText").innerHTML = "";
+            document.getElementById("messageText").innerHTML = "";
+        }
+    </script>
 </head>
 
 <body>
@@ -307,9 +314,9 @@
         <div id="contact-form">
             <form method="POST" action="https://formspree.io/f/xdojdlwg">
                 <input type="hidden" name="_subject" value="Contact request from personal website" />
-                <input type="email" name="_replyto" placeholder="Your email" required>
-                <textarea name="message" placeholder="Your message" required></textarea>
-                <button type="submit">Send</button>
+                <input id="emailText" type="email" name="_replyto" placeholder="Your email" required>
+                <textarea id="messageText" name="message" placeholder="Your message" required></textarea>
+                <button type="submit" onclick="clearInputs()">Send</button>
             </form>
         </div>
         <!-- End #contact-form -->
